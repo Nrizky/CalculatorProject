@@ -1,11 +1,12 @@
 package com.example.calculator;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RectangleActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,11 +30,14 @@ public class RectangleActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
+        try {
+            double et_panjang = Double.parseDouble(et_Panjang.getText().toString());
+            double et_lebar = Double.parseDouble(et_Lebar.getText().toString());
+            double luasPersegiPanjang = (et_lebar * et_panjang);
+            tvHasil.setText(String.valueOf(luasPersegiPanjang));
 
-        double et_panjang = Double.parseDouble(et_Panjang.getText().toString());
-        double et_lebar = Double.parseDouble(et_Lebar.getText().toString());
-        double luasPersegiPanjang = (et_lebar * et_panjang);
-        tvHasil.setText(String.valueOf(luasPersegiPanjang));
-
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "Error, Field Masih Kosong", Toast.LENGTH_SHORT).show();
+        }
     }
 }

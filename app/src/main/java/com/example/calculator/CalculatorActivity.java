@@ -1,14 +1,14 @@
 package com.example.calculator;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener{
+public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private Button btnJumlah, btnKurang, btnKali, btnBagi;
@@ -34,35 +34,35 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
     }
 
-            @Override
-            public void onClick(View v) {
+    @Override
+    public void onClick(View v) {
+        try {
 
-                double angka1 = Double.parseDouble(etAngka1.getText().toString());
-                double angka2 = Double.parseDouble(etAngka2.getText().toString());
-                double hasil = 0;
+            double angka1 = Double.parseDouble(etAngka1.getText().toString());
+            double angka2 = Double.parseDouble(etAngka2.getText().toString());
+            double hasil = 0;
 
-                try {
-                    switch (v.getId()){
-                        case R.id.btn_jumlah:
-                            hasil = angka1+angka2;
-                            break;
-                        case R.id.btn_kurang:
-                            hasil = angka1-angka2;
-                            break;
-                        case R.id.btn_kali:
-                            hasil = angka1*angka2;
-                            break;
-                        case R.id.btn_bagi:
-                            hasil = angka1/angka2;
-                            break;
-                    }
-                    tvHasil.setText(String.valueOf(hasil));
-
-                } catch(Exception e){
-                    Toast.makeText(getApplicationContext(), "Error, Field Masih Kosong" ,Toast.LENGTH_SHORT).show();
-                }
+            switch (v.getId()) {
+                case R.id.btn_jumlah:
+                    hasil = angka1 + angka2;
+                    break;
+                case R.id.btn_kurang:
+                    hasil = angka1 - angka2;
+                    break;
+                case R.id.btn_kali:
+                    hasil = angka1 * angka2;
+                    break;
+                case R.id.btn_bagi:
+                    hasil = angka1 / angka2;
+                    break;
             }
+            tvHasil.setText(String.valueOf(hasil));
+
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "Error, Field Masih Kosong", Toast.LENGTH_SHORT).show();
         }
+    }
+}
 
 
 

@@ -1,12 +1,10 @@
 package com.example.calculator;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
-
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         Button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),CalculatorActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CalculatorActivity.class);
                 intent.putExtra("Calculator Activity", "Calculator");
                 startActivity(intent);
             }
@@ -35,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         Button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),CircleActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CircleActivity.class);
                 intent.putExtra("Circle Activity", "Circle");
                 startActivity(intent);
             }
@@ -44,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         Button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),RectangleActivity.class);
+                Intent intent = new Intent(getApplicationContext(), RectangleActivity.class);
                 intent.putExtra("Rectangle Activity", "Rectangle");
                 startActivity(intent);
             }
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         Button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),TriangleActivity.class);
+                Intent intent = new Intent(getApplicationContext(), TriangleActivity.class);
                 intent.putExtra("Triangle Activity", "Triangle");
                 startActivity(intent);
             }
